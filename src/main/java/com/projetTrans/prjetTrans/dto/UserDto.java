@@ -6,17 +6,31 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @Builder
 public class UserDto {
+    @NotNull
+    @NotBlank
     private Integer id;
+    @NotNull
+    @NotBlank
     private String firstName;
+    @NotNull
+    @NotBlank
     private String lastName;
+    @NotNull
+    @NotBlank
     private String password;
+    @NotNull
+    @NotBlank
+    @Email
     private String email;
-
 
     public static UserDto fromEntity(User user){
         return UserDto.builder()

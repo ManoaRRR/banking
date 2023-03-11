@@ -3,13 +3,23 @@ package com.projetTrans.prjetTrans.dto;
 import com.projetTrans.prjetTrans.model.Account;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 @AllArgsConstructor
 @SuperBuilder
 @Getter
 @Setter
 public class AccountDto {
+    @NotNull
+    @NotBlank
     private Integer id;
+    @NotNull
+    @NotBlank
     private String iban;
+    @NotNull
+    @NotBlank
     private UserDto user;
 
     public static AccountDto fromEntity(Account account){

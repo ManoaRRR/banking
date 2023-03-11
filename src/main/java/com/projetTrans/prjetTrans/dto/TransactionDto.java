@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Getter
@@ -13,6 +16,9 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 public class TransactionDto {
+    @NotNull
+    @NotBlank
+    @Max(value = 1000000000)
     private BigDecimal amount;
 
     public TransactionDto fromEntity(Transaction transaction){

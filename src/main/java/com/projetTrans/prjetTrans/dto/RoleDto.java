@@ -7,12 +7,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Access;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 public class RoleDto {
+    @NotNull
+    @NotBlank
     private String name;
 
     public static RoleDto fromEntity(Role role){
