@@ -1,5 +1,6 @@
 package com.projetTrans.prjetTrans;
 
+import com.projetTrans.prjetTrans.exceptions.ObjectValidationException;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.Set;
 import java.util.stream.Collectors;
-//cette class est geenerique et elle permet de valider les objets ou leus valeurs sont entrées
+//cette class est geenerique et elle permet de valider les objets ou leus valeurs qui sont entrées dans les objectDTO sont entrées
 @Service
 public class ObjectValidators <T>{
     private  final ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();

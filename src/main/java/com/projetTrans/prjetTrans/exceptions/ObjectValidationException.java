@@ -1,4 +1,4 @@
-package com.projetTrans.prjetTrans;
+package com.projetTrans.prjetTrans.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
